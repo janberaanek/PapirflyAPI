@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.DTO.Article
+﻿namespace WebApplication1.DTO.Article.Response
 {
     public class ArticleListDto
     {
