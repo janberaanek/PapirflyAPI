@@ -10,9 +10,9 @@ namespace Application
     {
         public IList<Domain.Article> Articles = new List<Domain.Article>
         {
-            new Domain.Article { Id = 1, Name = "First Article", Description = "This is the content of the first article." },
-            new Domain.Article { Id = 2, Name = "Second Article", Description = "This is the content of the second article." },
-            new Domain.Article { Id = 3, Name = "Third Article", Description = "This is the content of the third article." }
+            new Domain.Article { Id = 1, Name = "First Article", Description = "This is the first article.", Category = "Top" },
+            new Domain.Article { Id = 2, Name = "Second Article", Description = "This is the second article.", Category = "Top" },
+            new Domain.Article { Id = 3, Name = "Third Article", Description = "This is the third article.", Category = "Cheap" }
         };
     }
 }

@@ -25,7 +25,13 @@ namespace Application.Article.Queries
                 queryable = queryable.Where(a =>
                     a.Name.Contains(request.Name, StringComparison.OrdinalIgnoreCase));
             }
-            
+
+            if (!string.IsNullOrWhiteSpace(request.Category))
+            {
+                queryable = queryable.Where(a =>
+                    a.Category.Equals(request.Category, StringComparison.OrdinalIgnoreCase));
+            }   
+
             var articles = queryable.ToList();
             var result = new ArticleListDto
             {
