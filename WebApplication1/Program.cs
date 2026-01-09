@@ -1,4 +1,7 @@
 using Application;
+using FluentValidation;
+using Microsoft.AspNetCore.Identity;
+using WebApplication1.DTO.Article.Request;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,9 @@ builder.Services.AddSingleton<ArticleStore>();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 builder.Services.AddApplication();
+
+// TODO: manual registration of validators needed
+builder.Services.AddScoped<IValidator<CreateArticleDto>, CreateArticleDtoValidator>();
 
 var app = builder.Build();
 

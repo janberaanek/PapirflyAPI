@@ -1,9 +1,9 @@
-﻿namespace Domain
-{
-    public class Article
-    {
-        public int Id { get; set; }
+﻿using MediatR;
 
+namespace Application.Article.Commands
+{
+    public class CreateArticleCommand: IRequest<int>
+    {
         public string Name { get; set; } = string.Empty;
 
         public string Description { get; set; } = string.Empty;

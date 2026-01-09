@@ -1,8 +1,8 @@
-﻿namespace Domain
+﻿namespace Application.Article.Dto
 {
-    public class Article
+    public class ArticleDto
     {
-        public int Id { get; set; }
+        public int ArticleId { get; set; }
 
         public string Name { get; set; } = string.Empty;
 

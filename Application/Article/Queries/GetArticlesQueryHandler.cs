@@ -1,12 +1,8 @@
-﻿
-
-using Application.Article.Dto;
-using Application.Article.Queries;
+﻿using Application.Article.Dto;
 using AutoMapper;
-using Domain;
 using MediatR;
 
-namespace Application
+namespace Application.Article.Queries
 {
     public class GetArticlesQueryHandler : IRequestHandler<GetArticlesQuery, ArticleListDto>
     {
@@ -27,7 +23,7 @@ namespace Application
             if (!string.IsNullOrWhiteSpace(request.Name))
             {
                 queryable = queryable.Where(a =>
-                    a.name.Contains(request.Name, StringComparison.OrdinalIgnoreCase));
+                    a.Name.Contains(request.Name, StringComparison.OrdinalIgnoreCase));
             }
             
             var articles = queryable.ToList();
